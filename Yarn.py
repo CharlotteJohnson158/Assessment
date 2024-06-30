@@ -21,3 +21,56 @@ def print_query(view_name:str):
     # Print the results in a table with the headings
     print(tabulate(results,headings))
     db.close()
+
+menu_choice = ''
+while menu_choice != 'Z':
+    menu_choice = input('Welcome to the Yarn database\n\n'
+                        'Type the letter for the information you want:\n'
+                        'A: Yarn with the brand of either Bernat, or Caron'
+                        'B: Yarn from the brand Cascade Yarns'
+                        'C: All yarn with the hook sizes of 4mm, 4.5mm, or 5mm'
+                        'D: Yarn with the brand of either Red Heart, or Lion Brand'
+                        'E: Yarn that has the weight of either Sport, or Super Bulky'
+                        'F: Yarn that has the weight of either Sport, or Worsted'
+                        'G: Yarn that has the weight of Worsted')
+    menu_choice = menu_choice.upper()
+    if menu_choice == 'A':
+        print_query('Bernat,Caron')
+    elif menu_choice == 'B':
+        print_query('Cascade Yarns')
+    elif menu_choice == 'C':
+        print_query('Hook Sizes')
+    elif menu_choice == 'D':
+        print_query('Red Heart, or Lion Brand')
+    elif menu_choice == 'E':
+        print_query('Sport or Super Bulky')
+    elif menu_choice == 'F':
+        print_query('Sport or Worsted')
+    elif menu_choice == 'G':
+        print_query('Worsted Weight')
+
+#Import the libraries to connect to the database and present the information in tables
+import sqlite3
+from tabulate import tabulate
+
+
+# This is the filename of the database to be used
+DB_NAME = 'Yarn.db'
+# This is the SQL to connect to all the tables in the database
+TABLES = (" yarn "
+          "LEFT JOIN brand ON yarn.brand_id = brand.brand_id "
+          "LEFT JOIN weight ON yarn.weight_id = weight.weight_id ")
+
+def print_parameter_query(fields:str, where:str, parameter):
+    """ Prints the results for a parameter query in tabular form. """
+    db = sqlite3.connect(DB_NAME)
+    cursor = db.cursor()
+    sql = ("SELECT " + fields + " FROM " + TABLES + " WHERE " + where)
+    cursor.execute(sql,(parameter,))
+    results = cursor.fetchall()
+    print(tabulate(results,fields.split(",")))
+    db.close()
+
+
+brand = input('Which brand of yarn do you want to see?: ')
+print_parameter_query("name, weight, colour", "brand = ? ORDER BY weight ASC",make)
