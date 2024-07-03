@@ -26,13 +26,13 @@ menu_choice = ''
 while menu_choice != 'Z':
     menu_choice = input('Welcome to the Yarn database\n\n'
                         'Type the letter for the information you want:\n'
-                        'A: Yarn with the brand of either Bernat, or Caron'
-                        'B: Yarn from the brand Cascade Yarns'
-                        'C: All yarn with the hook sizes of 4mm, 4.5mm, or 5mm'
-                        'D: Yarn with the brand of either Red Heart, or Lion Brand'
-                        'E: Yarn that has the weight of either Sport, or Super Bulky'
-                        'F: Yarn that has the weight of either Sport, or Worsted'
-                        'G: Yarn that has the weight of Worsted')
+                        'A: Yarn with the brand of either Bernat, or Caron\n'
+                        'B: Yarn from the brand Cascade Yarns\n'
+                        'C: All yarn with the hook sizes of 4mm, 4.5mm, or 5mm\n'
+                        'D: Yarn with the brand of either Red Heart, or Lion Brandn\n'
+                        'E: Yarn that has the weight of either Sport, or Super Bulky\n'
+                        'F: Yarn that has the weight of either Sport, or Worsted\n'
+                        'G: Yarn that has the weight of Worsted\n')
     menu_choice = menu_choice.upper()
     if menu_choice == 'A':
         print_query('Bernat,Caron')
@@ -73,4 +73,4 @@ def print_parameter_query(fields:str, where:str, parameter):
 
 
 brand = input('Which brand of yarn do you want to see?: ')
-print_parameter_query("name, weight, colour", "brand = ? ORDER BY weight ASC",make)
+print_parameter_query("name, weight, colour", "brand = ? ORDER BY weight ASC",brand)
