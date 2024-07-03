@@ -60,16 +60,17 @@ while menu_choice != 'Z':
                         'J: Yarn that has the material of Acrylic and Wool\n'
                         'K: Yarn that has the weight of either Bulky, or Super Bulky\n'
                         'L: Yarn that is made out of polyester\n'
-                        'Z: Exit\n\nType option here: \n')
+                        'Z: Exit\n\nType option here: ')
     menu_choice = menu_choice.upper()
     if menu_choice == 'A':
         print_query('Bernat, Caron')
     elif menu_choice == 'B':
-        print('Brands:\nRed Heart\nLion Brand\nBernat\nCaron\nRowan\nCascade Yarns\n')
+        print('Brands:\nRed Heart\nLion Brand\nBernat\nCaron\nRowan\nCascade Yarns')
         brand = input('Which brand of yarn do you want to see?: ')
         print_parameter_query("name, weight, colour", "brand = ? ORDER BY name ASC",brand)
     elif menu_choice == 'C':
         hook_size = input('Which hook size do you want to see?: ')
+        print('Hook Sizes:\n4mm\n4.5mm\n5mm\n6.5mm\n8mm\n9mm\n')
         print_parameter_query("brand, name, weight, colour", "hook_size = ? ORDER BY brand DESC",hook_size)
     elif menu_choice == 'D':
         print_query('Red Heart, Lion Brand')
