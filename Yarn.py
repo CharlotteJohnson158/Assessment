@@ -63,15 +63,16 @@ while menu_choice != 'Z':
                         'Z: Exit\n\nType option here: ')
     menu_choice = menu_choice.upper()
     if menu_choice == 'A':
-        print_query('Bernat,Caron')
+        print_query('Bernat, Caron')
     elif menu_choice == 'B':
+        print('Red Heart\nLion Brand\nBernat\nCaron\nRowan\nCascade Yarns')
         brand = input('Which brand of yarn do you want to see?: ')
         print_parameter_query("name, weight, colour", "brand = ? ORDER BY name ASC",brand)
     elif menu_choice == 'C':
         hook_size = input('Which hook size do you want to see?: ')
         print_parameter_query("brand, name, weight, colour", "hook_size = ? ORDER BY brand DESC",hook_size)
     elif menu_choice == 'D':
-        print_query('Red Heart, or Lion Brand')
+        print_query('Red Heart, Lion Brand')
     elif menu_choice == 'E':
         print_query('Sport or Super Bulky')
     elif menu_choice == 'F':
