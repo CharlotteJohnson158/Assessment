@@ -69,7 +69,7 @@ while menu_choice != 'Z':
         brand = input('Which brand of yarn do you want to see?: ')
         print_parameter_query("brand, name, weight, colour", "brand = ? ORDER BY name ASC",brand)
     elif menu_choice == 'C':
-        print('Hook Sizes:\n4mm\n4.5mm\n5mm\n6.5mm\n8mm\n9mm\n')
+        print('Hook Sizes:\n4mm\n4.5mm\n5mm\n6.5mm\n8mm\n9mm')
         hook_size = input('Which hook size do you want to see?: ')
         print_parameter_query("brand, name, weight, colour, hook_size", "hook_size = ? ORDER BY brand DESC",hook_size)
     elif menu_choice == 'D':
