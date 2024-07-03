@@ -60,7 +60,7 @@ while menu_choice != 'Z':
                         'J: Yarn that has the material of Acrylic and Wool\n'
                         'K: Yarn that has the weight of either Bulky, or Super Bulky\n'
                         'L: Yarn that is made out of polyester\n'
-                        'Z: Exit\n')
+                        'Z: Exit\n\nType option here: ')
     menu_choice = menu_choice.upper()
     if menu_choice == 'A':
         print_query('Bernat,Caron')
