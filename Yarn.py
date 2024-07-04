@@ -65,11 +65,11 @@ while menu_choice != 'Z':
     if menu_choice == 'A':
         print_query('Bernat, Caron')
     elif menu_choice == 'B':
-        print('Brands:\nRed Heart\nLion Brand\nBernat\nCaron\nRowan\nCascade Yarns')
+        print('Brands:\nRed Heart\nLion Brand\nBernat\nCaron\nRowan\nCascade Yarns\n\n')
         brand = input('Which brand of yarn do you want to see?: ')
         print_parameter_query("brand, name, weight, colour", "brand = ? ORDER BY name ASC",brand)
     elif menu_choice == 'C':
-        print('Hook Sizes:\n4mm\n4.5mm\n5mm\n6.5mm\n8mm\n9mm')
+        print('Hook Sizes:\n4mm\n4.5mm\n5mm\n6.5mm\n8mm\n9mm\n\n')
         hook_size = input('Which hook size do you want to see?: ')
         print_parameter_query("brand, name, weight, colour, hook_size", "hook_size = ? ORDER BY brand DESC",hook_size)
     elif menu_choice == 'D':
@@ -81,9 +81,11 @@ while menu_choice != 'Z':
     elif menu_choice == 'G':
         print_query('Worsted Weight')
     elif menu_choice == 'H':
+        print('Needle Sizes:\n4mm\n4.5mm\n5mm\n6.5mm\n8mm\n9mm\n\n')
         needle_size = input('Which needle size do you want to see?: ')
         print_parameter_query("brand, name, weight, colour, needle_size", "needle_size = ? ORDER BY weight DESC",needle_size)
     elif menu_choice == 'I':
+        print('Materials:\nAcrylic\nCotton\nPolyester\nCotton\nAcrylic and Wool\nBaby Alpaca, Cashmere and Silk\nAcrylic and Wool\nAlpaca and Wool\nWool\n\n')
         materials = input('Which material do you want to see?: ')
         print_parameter_query("brand, name, weight, colour, materials", "materials = ? ORDER BY weight ASC",materials)
     elif menu_choice == 'J':
