@@ -85,7 +85,7 @@ while menu_choice != 'Z':
         needle_size = input('Which needle size do you want to see?: ')
         print_parameter_query("brand, name, weight, colour, needle_size", "needle_size = ? ORDER BY weight DESC",needle_size)
     elif menu_choice == 'I':
-        print('Materials:\nAcrylic\nCotton\nPolyester\nCotton\nAcrylic and Wool\nBaby Alpaca, Cashmere and Silk\nAcrylic and Wool\nAlpaca and Wool\nWool\n\n')
+        print('Materials:\nAcrylic\nCotton\nPolyester\nCotton\nAcrylic and Wool\nBaby Alpaca, Cashmere and Silk\nAlpaca and Wool\nWool\n\n')
         materials = input('Which material do you want to see?: ')
         print_parameter_query("brand, name, weight, colour, materials", "materials = ? ORDER BY weight ASC",materials)
     elif menu_choice == 'J':
